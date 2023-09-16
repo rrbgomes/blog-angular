@@ -1,27 +1,19 @@
 
-<header>
-  <app-menu-bar></app-menu-bar>
-</header>
-
 <app-title-bar></app-title-bar>
 
 <div class="container__articles">
-  <div class="articles__main">
+  <div>
     <app-big-card
-    photoCover="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/424CA51559C2252BB245D6D2406A31E77D037DA5E7C12D3B1F19CB11E72699D4/scale?width=1200&aspectRatio=1.78&format=jpeg"
-    cardTitle="The simpson is back"
-    cadrDescription="noonasodnoasndoan oo noasndon oan ansdon oasndn aosdn aonsodn aon oan oan oandsndosndo naon as."></app-big-card>
+      *ngFor="let c of bigCardArticles"
+      [id]="c.id">
+    </app-big-card>
   </div>
+
   <div class="articles_others">
     <app-small-card
-    photoCover="https://zonacuriosa.com/wp-content/uploads/2021/08/curiosidades-interessantes-sobre-o-homer-simpson-3.jpg"
-    cardTitle="Onomn jdsmmkajdmd mmasndnasnda"></app-small-card>
-    <app-small-card
-    photoCover="https://lumiere-a.akamaihd.net/v1/images/ka_os-simpsons_2000x1125px_4c71687a.jpeg?region=0%2C0%2C2000%2C1125"
-    cardTitle="Onomn jdsmmkajdmd mmasndnasnda"></app-small-card>
-    <app-small-card
-    photoCover="https://super.abril.com.br/wp-content/uploads/2018/07/566ee0ae82bee174ca0300dahomer-simpson.jpeg"
-    cardTitle="Onomn jdsmmkajdmd mmasndnasnda"></app-small-card>
+      *ngFor="let c of smallCardArticles"
+      [id]="c.id">
+    </app-small-card>
   </div>
 </div>
 

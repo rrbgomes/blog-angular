@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {dataFake} from '../../data/dataFake'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-big-card',
@@ -8,16 +10,26 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BigCardComponent implements OnInit {
 
   @Input()
+  id:string = "";
   photoCover:string = "";
-  @Input()
   cardTitle:string = "";
-  @Input()
   cadrDescription:string = "";
 
 
-  constructor() { }
+  constructor(
+    private route:ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.setValuesComponent(this.id);
+  }
+
+  setValuesComponent(id:string){
+    const result = dataFake.filter(article => article.id==id)[0];
+    this.cardTitle = result.title;
+    this.photoCover = result.photo;
+    this.cadrDescription = result.description;
+
   }
 
 }
